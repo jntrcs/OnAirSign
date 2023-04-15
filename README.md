@@ -1,7 +1,7 @@
 # OnAirSign
 The goal of this project is to rig up a smart plug to reflect my meeting status at work. This way my wife knows if I'm on a video call or not from a distance. 
 
-The Smart Plug is controlled with IFTTT. A get request triggers the action, and the Smart Life integration toggles the switch.
+The Smart Plug is controlled with IFTTT. A GET request triggers the action, and the Smart Life integration toggles the switch. I store the API key needed to send these GET requests in a config.py file.
 
 This was my first largely ChatGPT driven programming project. I have not programmed in Python in several years. The main thing I had no idea how to do was to determine whether or not I am in a meeting. My original request to ChatGPT was to provide a way to check if my camera was on. It recommended the psutil package, which allowed me to iterate through a list of processes running on my Mac. However, what it told me to search for in the processes list was completely wrong. The process never appeared regardless of whether I was using my camera or not. By comparing the list of processes when I was on a Zoom call with the processes when I was not, I was able to find a hacky workaround. The process titled 'CptHost' appears to only be active when I'm connected to a Zoom call. I have no idea what this process is so I am not sure if I'll ever run into a situation where this triggers without me being on Zoom. Also unfortunately, this doesn't work for other video conferencing calls (e.g. Google Meet). My original intent was to trigger the action based off either of my cameras being used (built in or USB), so if anyone has any tips on how to improve that, I'm all ears.
 
